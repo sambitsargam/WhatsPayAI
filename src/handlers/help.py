@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 async def handle_help_request() -> str:
     """
     Generate help message with usage instructions.
-    
+
     Returns:
         Help message for the user
     """
@@ -55,7 +55,7 @@ Just ask me any question - I'm here to help!
 ---
 Powered by Hathor Network | Fast, feeless transactions
 """
-    
+
     logger.info("Help request handled")
     return help_message.strip()
 
@@ -63,7 +63,7 @@ Powered by Hathor Network | Fast, feeless transactions
 async def handle_getting_started() -> str:
     """
     Generate getting started guide for new users.
-    
+
     Returns:
         Getting started message
     """
@@ -91,14 +91,14 @@ Most questions cost just 0.01-0.05 HTR (less than a penny!)
 
 Ready to begin? Type `top up 1 HTR` to start!
 """
-    
+
     return message.strip()
 
 
 async def handle_pricing_info() -> str:
     """
     Generate detailed pricing information.
-    
+
     Returns:
         Pricing information message
     """
@@ -133,14 +133,14 @@ async def handle_pricing_info() -> str:
 
 Ready to try? Your first question might cost just 0.01 HTR!
 """
-    
+
     return message.strip()
 
 
 async def handle_technical_info() -> str:
     """
     Generate technical information about the service.
-    
+
     Returns:
         Technical information message
     """
@@ -178,14 +178,14 @@ async def handle_technical_info() -> str:
 
 Questions about the technology? Just ask!
 """
-    
+
     return message.strip()
 
 
 def get_command_list() -> str:
     """
     Generate list of available commands.
-    
+
     Returns:
         Command list message
     """
@@ -218,5 +218,5 @@ Just ask naturally! No special commands needed.
 
 Type any command or question to get started!
 """
-    
+
     return commands.strip()
