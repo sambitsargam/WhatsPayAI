@@ -60,7 +60,10 @@ def process_deposits():
 
                     from .twilio_client import send_whatsapp_message_safe
 
-                    message = f"✅ Deposit confirmed! {amount} HTR has been added to your account. Current balance: {balances[user_id]} HTR"
+                    message = (
+                        f"✅ Deposit confirmed! {amount} HTR has been added to your account. "
+                        f"Current balance: {balances[user_id]} HTR"
+                    )
 
                     # Run async function in sync context
                     loop = asyncio.new_event_loop()
