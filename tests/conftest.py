@@ -10,6 +10,16 @@ import json
 import tempfile
 import os
 
+# Load test environment
+os.environ.setdefault("TWILIO_SID", "test_sid")
+os.environ.setdefault("TWILIO_TOKEN", "test_token")
+os.environ.setdefault("TWILIO_WHATSAPP_NUMBER", "whatsapp:+1234567890")
+os.environ.setdefault("OPENAI_API_KEY", "test_openai_key")
+os.environ.setdefault("HATHOR_NETWORK", "testnet")
+os.environ.setdefault("HATHOR_NODE_URL", "https://node1.testnet.hathor.network")
+os.environ.setdefault("HATHOR_WALLET_SEED", "test_seed_phrase")
+os.environ.setdefault("DEBUG", "true")
+
 
 @pytest.fixture
 def mock_openai():

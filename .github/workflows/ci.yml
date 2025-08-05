@@ -36,7 +36,7 @@ jobs:
       run: isort --check-only .
     
     - name: Run flake8 linting
-      run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+      run: flake8 . --count --statistics --max-line-length=88 --extend-ignore=E203,W503
 
   test:
     runs-on: ubuntu-latest
@@ -62,6 +62,16 @@ jobs:
       continue-on-error: true
     
     - name: Run tests with coverage
+      env:
+        # Set test environment variables
+        TWILIO_SID: test_sid
+        TWILIO_TOKEN: test_token
+        TWILIO_WHATSAPP_NUMBER: whatsapp:+1234567890
+        OPENAI_API_KEY: test_openai_key
+        HATHOR_NETWORK: testnet
+        HATHOR_NODE_URL: https://node1.testnet.hathor.network
+        HATHOR_WALLET_SEED: test_seed_phrase
+        DEBUG: true
       run: |
         pytest --cov=src --cov-report=xml --cov-report=html
     
