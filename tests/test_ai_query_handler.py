@@ -16,7 +16,7 @@ class TestAIQueryHandler:
         """Test token counting estimation."""
         test_cases = [
             ("Hello world", 2),  # ~11 chars / 4 = 2 tokens (floored)
-            ("This is a test", 3),  # ~15 chars / 4 = 3 tokens  
+            ("This is a test", 3),  # ~15 chars / 4 = 3 tokens
             ("", 1),  # Minimum 1 token
             ("A" * 100, 25),  # 100 chars / 4 = 25 tokens
         ]

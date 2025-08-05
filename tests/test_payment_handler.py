@@ -37,7 +37,7 @@ class TestPaymentHandler:
             "top up some HTR",
             "add money please",
             "deposit abc HTR",
-            "top up 0 HTR",  # Zero amount  
+            "top up 0 HTR",  # Zero amount
             "top up 10000 HTR",  # Too large
         ]
 
