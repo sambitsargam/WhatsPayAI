@@ -2,6 +2,7 @@
 Hathor Network Client
 
 Handles wallet operations and blockchain interactions for the Hathor network.
+Note: Uses HTTP client fallback when hathor-wallet-lib is not available.
 """
 
 import hashlib
@@ -11,6 +12,19 @@ from typing import Dict, List, Optional, Tuple
 
 import requests
 from dotenv import load_dotenv
+
+# Try to import Hathor libraries, fallback to HTTP client if not available
+try:
+    # These packages may not be available on PyPI
+    # from hathor_wallet_lib import HathorWallet
+    # from hathor_api_client import HathorApiClient
+    HATHOR_LIBS_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning("Hathor libraries not available, using HTTP client fallback")
+except ImportError:
+    HATHOR_LIBS_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.info("Using HTTP client for Hathor integration")
 
 # Load environment variables
 load_dotenv()

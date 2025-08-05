@@ -27,7 +27,7 @@ A WhatsApp-based AI assistant that uses feeless Hathor Network micro-payments fo
 ### 1. Clone and Setup
 
 ```bash
-git clone https://github.com/your-username/WhatsPayAI.git
+git clone https://github.com/sambitsargam/WhatsPayAI.git
 cd WhatsPayAI
 ./setup.sh
 ```
@@ -55,6 +55,16 @@ DEBUG=True
 PORT=8000
 COST_PER_100_TOKENS=0.01
 ```
+
+**Note on Hathor Dependencies:**
+The Hathor wallet libraries (`hathor-wallet-lib`, `hathor-api-client`) are not available on PyPI. For production use, install them from source:
+
+```bash
+pip install git+https://github.com/hathornetwork/hathor-wallet-lib@master
+pip install git+https://github.com/hathornetwork/hathor-api-client@master
+```
+
+The application will work with HTTP client fallback for development and testing.
 
 ### 3. Run the Application
 

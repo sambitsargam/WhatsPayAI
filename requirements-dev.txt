@@ -1,0 +1,11 @@
+# Production requirements
+-r requirements.txt
+
+# Optional Hathor dependencies (install from source if available)
+# git+https://github.com/hathornetwork/hathor-wallet-lib@master
+# git+https://github.com/hathornetwork/hathor-api-client@master
+
+# Additional development dependencies
+jupyter==1.0.0
+ipython==8.17.2
+pre-commit==3.5.0
